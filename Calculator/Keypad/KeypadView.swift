@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct KeypadView<K: Keypad>: View {
+struct KeypadView: View {
     @ObservedObject var calculator: CalculatorState
 
-    var keypad: K
+    var keypad: any Keypad
 
     var body: some View {
         Button {
@@ -21,20 +21,35 @@ struct KeypadView<K: Keypad>: View {
                     Image(systemName: icon)
                 } else {
                     Text(keypad.title)
+                    Spacer()
                 }
             }
-            .padding(10)
-            .foregroundColor(.white)
-            .background(keypad.background)
-            .clipShape(Capsule())
+            .padding()
         }
+//        .aspectRatio(keypad.ratio, contentMode: .fill)
+        .foregroundColor(.white)
         .gridCellColumns(Int(keypad.dimension.column))
+        .background(keypad.background)
+        .clipShape(Capsule())
+        .buttonStyle(.bordered)
+        
     }
 }
 
 struct KeypadView_Previews: PreviewProvider {
     static var previews: some View {
-        KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
+        KeypadView(calculator: CalculatorState(), keypad: .negate)
+
+        Grid {
+            GridRow {
+                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
+                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.two)
+                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.three)
+            }
+            GridRow {
+                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.zero)
+                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.four)
+            }
+        }
     }
 }
-

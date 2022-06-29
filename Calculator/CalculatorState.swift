@@ -14,15 +14,31 @@ class CalculatorState: ObservableObject {
     }
 
     private var state: State = .value(0)
-    @Published var result: Decimal = 0
+    @Published var result: String = "0"
+
+    @Published var lastResult: String = ""
 
     func updateState(for keypad: some Keypad) {
         if let keypad = keypad as? NumberInputKeypad {
+            if case .value = state {
+                result += keypad.number.description
+            } else if case .operator = state {
+                lastResult = result
+                result = keypad.number.description
+            }
             state = .value(keypad.number)
-            result = Decimal(Double("\(result)\(keypad.number)")!)
-        } else if let keypad = keypad as? PointInputKeypad {
-            // TODO: Dot mode
-            result = Decimal(Double("\(result)\(keypad.title)")!)
+        } else if keypad is DotInputKeypad {
+            if !result.contains(".") {
+                result += "."
+            }
+        } else if let keypad = keypad as? UnaryOperatorKeypad {
+            result = keypad.operate(result)
+        } else if let keypad = keypad as? BinaryOperatorKeypad {
+            if !lastResult.isEmpty {
+                result = keypad.operate(lastResult, result)
+                lastResult = ""
+            }
+            state = .operator(keypad)
         }
     }
 }

@@ -21,7 +21,7 @@ protocol Keypad {
 }
 
 extension Keypad {
-    var icon: String? { nil }
-
     var dimension: (row: UInt8, column: UInt8) { (1, 1) }
+
+    var ratio: Double { Double(dimension.row) / Double(dimension.column) }
 }

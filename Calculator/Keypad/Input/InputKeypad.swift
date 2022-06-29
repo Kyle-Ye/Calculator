@@ -10,6 +10,8 @@ import SwiftUI
 protocol InputKeypad: Keypad {}
 
 extension InputKeypad {
+    var icon: String? { nil }
+    
     var background: Color { Color(.darkGray) }
 }
 
