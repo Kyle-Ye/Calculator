@@ -6,6 +6,7 @@
 //
 
 import OSLog
+import RegexBuilder
 import SwiftUI
 
 class CalculatorState: ObservableObject {
@@ -61,8 +62,13 @@ class CalculatorState: ObservableObject {
             buffer = keypad.number.description
             lastBinaryOperatorKeypad = binaryOperatorKeypad
         }
+        let hasMinus = buffer.hasPrefix("-")
+        if hasMinus {
+            buffer.removeFirst()
+        }
         buffer = String(buffer.trimmingPrefix("0"))
         if buffer.hasPrefix(".") || buffer.isEmpty { buffer.insert("0", at: buffer.startIndex) }
+        if hasMinus { buffer.insert("-", at: buffer.startIndex) }
         result = buffer
         state = .value(keypad.number)
     }
