@@ -18,7 +18,7 @@ struct EqualOperatorKeypad: SpecialOperatorKeypad {
 
     var forgroundColor: Color { .white }
 
-    var backgroundColor: Color { .orange }
+    var backgroundColor: Color { .accentColor }
 }
 
 extension Keypad where Self == EqualOperatorKeypad {

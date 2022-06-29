@@ -14,7 +14,7 @@ protocol BinaryOperatorKeypad: OperatorKeypad {
 extension BinaryOperatorKeypad {
     var forgroundColor: Color { .white }
 
-    var backgroundColor: Color { .orange }
+    var backgroundColor: Color { .accentColor }
 }
 
 // MARK: - DivideOperatorKeypad

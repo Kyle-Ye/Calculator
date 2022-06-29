@@ -36,6 +36,9 @@ struct KeypadView: View {
             }
             .padding()
         }
+        .onHover { exit in
+            print(exit.description)
+        }
         .aspectRatio(keypad.ratio, contentMode: .fill)
         .foregroundColor(binaryOperatorSelected ? keypad.backgroundColor : keypad.forgroundColor)
         .background(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
