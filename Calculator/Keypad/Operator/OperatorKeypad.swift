@@ -7,5 +7,4 @@
 
 import SwiftUI
 
-protocol OperatorKeypad: Keypad {
-}
+protocol OperatorKeypad: Keypad {}

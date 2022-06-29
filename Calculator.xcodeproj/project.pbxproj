@@ -20,6 +20,7 @@
 		27052179286B4E180050E88B /* BinaryOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */; };
 		2705217B286B4E330050E88B /* DotInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217A286B4E330050E88B /* DotInputKeypad.swift */; };
 		2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217C286B4E480050E88B /* NumberInputKeypad.swift */; };
+		27052185286C4F7F0050E88B /* SpecialOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperatorKeypad.swift; sourceTree = "<group>"; };
 		2705217A286B4E330050E88B /* DotInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotInputKeypad.swift; sourceTree = "<group>"; };
 		2705217C286B4E480050E88B /* NumberInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputKeypad.swift; sourceTree = "<group>"; };
+		27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOperatorKeypad.swift; sourceTree = "<group>"; };
+		271BD5A8286C65550013B3CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		27052154286B43FB0050E88B /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				271BD5A8286C65550013B3CB /* Info.plist */,
 				27052155286B43FB0050E88B /* CalculatorApp.swift */,
 				27052157286B43FB0050E88B /* ContentView.swift */,
 				2705216B286B46030050E88B /* CalculatorState.swift */,
@@ -116,6 +120,7 @@
 				2705216E286B4A900050E88B /* OperatorKeypad.swift */,
 				27052176286B4E070050E88B /* UnaryOperatorKeypad.swift */,
 				27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */,
+				27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				2705216F286B4A900050E88B /* OperatorKeypad.swift in Sources */,
 				27052173286B4CEB0050E88B /* InputKeypad.swift in Sources */,
 				27052158286B43FB0050E88B /* ContentView.swift in Sources */,
+				27052185286C4F7F0050E88B /* SpecialOperatorKeypad.swift in Sources */,
 				27052179286B4E180050E88B /* BinaryOperatorKeypad.swift in Sources */,
 				27052171286B4AAD0050E88B /* Keypad.swift in Sources */,
 				2705217B286B4E330050E88B /* DotInputKeypad.swift in Sources */,
@@ -329,6 +335,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -342,6 +350,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,6 +371,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -374,6 +386,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

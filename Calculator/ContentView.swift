@@ -10,22 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var calculator = CalculatorState()
 
-    let keypadsLayout: [[any Keypad]] = [
-        [.clear, .negate, .percent, .divide],
-        [.seven, .eight, .nine, .multiply],
-        [.four, .five, .six, .minus],
-        [.one, .two, .three, .plus],
-        [.zero, .dot, .equal],
-    ]
-
-    var result: String {
-        let result = String(calculator.result.trimmingPrefix("0"))
-        return result.isEmpty ? "0" : result
+    var keypadsLayout: [[any Keypad]] {
+        [
+            // FIXME: THe AC condition and effect is not accurate
+            [calculator.result == "0" ? .allClear : .clear, .negate, .percent, .divide],
+            [.seven, .eight, .nine, .multiply],
+            [.four, .five, .six, .minus],
+            [.one, .two, .three, .plus],
+            [.zero, .dot, .equal],
+        ]
     }
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 12) {
-            Text(result)
+            Text(calculator.result)
                 .foregroundColor(.white)
                 .font(.system(size: 64))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
