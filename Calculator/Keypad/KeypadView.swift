@@ -22,6 +22,7 @@ struct KeypadView: View {
 
     var keypad: any Keypad
 
+    // FIXME: Make button to be circle in most cases
     var body: some View {
         Button {
             calculator.updateState(for: keypad)

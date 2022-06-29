@@ -54,6 +54,7 @@ class CalculatorState: ObservableObject {
     }
 
     private func numberInput(_ keypad: NumberInputKeypad) {
+        // FIXME:  Use Regex to refactor the logic here
         var buffer = ""
         if case .value = state {
             buffer = result + keypad.number.description
