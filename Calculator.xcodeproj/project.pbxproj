@@ -11,6 +11,16 @@
 		27052158286B43FB0050E88B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052157286B43FB0050E88B /* ContentView.swift */; };
 		2705215A286B43FB0050E88B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27052159286B43FB0050E88B /* Assets.xcassets */; };
 		2705215E286B43FC0050E88B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2705215D286B43FC0050E88B /* Preview Assets.xcassets */; };
+		27052168286B45860050E88B /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052167286B45860050E88B /* KeypadView.swift */; };
+		2705216C286B46030050E88B /* CalculatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705216B286B46030050E88B /* CalculatorState.swift */; };
+		2705216F286B4A900050E88B /* OperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705216E286B4A900050E88B /* OperatorKeypad.swift */; };
+		27052171286B4AAD0050E88B /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052170286B4AAD0050E88B /* Keypad.swift */; };
+		27052173286B4CEB0050E88B /* InputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052172286B4CEB0050E88B /* InputKeypad.swift */; };
+		27052177286B4E070050E88B /* UnaryOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052176286B4E070050E88B /* UnaryOperatorKeypad.swift */; };
+		27052179286B4E180050E88B /* BinaryOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */; };
+		2705217B286B4E330050E88B /* PointInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217A286B4E330050E88B /* PointInputKeypad.swift */; };
+		2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217C286B4E480050E88B /* NumberInputKeypad.swift */; };
+		2705217F286B54C10050E88B /* KeypadLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217E286B54C10050E88B /* KeypadLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +30,16 @@
 		27052159286B43FB0050E88B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2705215B286B43FC0050E88B /* Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculator.entitlements; sourceTree = "<group>"; };
 		2705215D286B43FC0050E88B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27052167286B45860050E88B /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
+		2705216B286B46030050E88B /* CalculatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorState.swift; sourceTree = "<group>"; };
+		2705216E286B4A900050E88B /* OperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorKeypad.swift; sourceTree = "<group>"; };
+		27052170286B4AAD0050E88B /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
+		27052172286B4CEB0050E88B /* InputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKeypad.swift; sourceTree = "<group>"; };
+		27052176286B4E070050E88B /* UnaryOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaryOperatorKeypad.swift; sourceTree = "<group>"; };
+		27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryOperatorKeypad.swift; sourceTree = "<group>"; };
+		2705217A286B4E330050E88B /* PointInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInputKeypad.swift; sourceTree = "<group>"; };
+		2705217C286B4E480050E88B /* NumberInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputKeypad.swift; sourceTree = "<group>"; };
+		2705217E286B54C10050E88B /* KeypadLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +72,9 @@
 		27052154286B43FB0050E88B /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				2705216B286B46030050E88B /* CalculatorState.swift */,
+				2705216D286B4A800050E88B /* Protocol */,
+				27052166286B456F0050E88B /* Keypad */,
 				27052155286B43FB0050E88B /* CalculatorApp.swift */,
 				27052157286B43FB0050E88B /* ContentView.swift */,
 				27052159286B43FB0050E88B /* Assets.xcassets */,
@@ -67,6 +90,45 @@
 				2705215D286B43FC0050E88B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27052166286B456F0050E88B /* Keypad */ = {
+			isa = PBXGroup;
+			children = (
+				27052170286B4AAD0050E88B /* Keypad.swift */,
+				27052175286B4DF70050E88B /* Operator */,
+				27052174286B4DEB0050E88B /* Input */,
+				27052167286B45860050E88B /* KeypadView.swift */,
+				2705217E286B54C10050E88B /* KeypadLayout.swift */,
+			);
+			path = Keypad;
+			sourceTree = "<group>";
+		};
+		2705216D286B4A800050E88B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		27052174286B4DEB0050E88B /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				27052172286B4CEB0050E88B /* InputKeypad.swift */,
+				2705217A286B4E330050E88B /* PointInputKeypad.swift */,
+				2705217C286B4E480050E88B /* NumberInputKeypad.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		27052175286B4DF70050E88B /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				2705216E286B4A900050E88B /* OperatorKeypad.swift */,
+				27052176286B4E070050E88B /* UnaryOperatorKeypad.swift */,
+				27052178286B4E180050E88B /* BinaryOperatorKeypad.swift */,
+			);
+			path = Operator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +201,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27052168286B45860050E88B /* KeypadView.swift in Sources */,
+				2705216F286B4A900050E88B /* OperatorKeypad.swift in Sources */,
+				27052173286B4CEB0050E88B /* InputKeypad.swift in Sources */,
 				27052158286B43FB0050E88B /* ContentView.swift in Sources */,
+				27052179286B4E180050E88B /* BinaryOperatorKeypad.swift in Sources */,
+				2705217F286B54C10050E88B /* KeypadLayout.swift in Sources */,
+				27052171286B4AAD0050E88B /* Keypad.swift in Sources */,
+				2705217B286B4E330050E88B /* PointInputKeypad.swift in Sources */,
+				27052177286B4E070050E88B /* UnaryOperatorKeypad.swift in Sources */,
+				2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */,
 				27052156286B43FB0050E88B /* CalculatorApp.swift in Sources */,
+				2705216C286B46030050E88B /* CalculatorState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
