@@ -16,7 +16,9 @@ struct EqualOperatorKeypad: SpecialOperatorKeypad {
 
     var title: String { "Equal" }
 
-    var background: Color { .orange }
+    var forgroundColor: Color { .white }
+
+    var backgroundColor: Color { .orange }
 }
 
 extension Keypad where Self == EqualOperatorKeypad {
@@ -30,9 +32,9 @@ struct AllClearOperatorKeypad: SpecialOperatorKeypad {
 
     var title: String { "AC" }
 
-    var background: Color {
-        Color(uiColor: .lightGray)
-    }
+    var forgroundColor: Color { .black }
+
+    var backgroundColor: Color { Color(uiColor: .lightGray) }
 }
 
 extension Keypad where Self == AllClearOperatorKeypad {

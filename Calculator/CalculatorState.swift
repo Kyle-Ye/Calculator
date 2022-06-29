@@ -13,11 +13,11 @@ class CalculatorState: ObservableObject {
         case `operator`(BinaryOperatorKeypad)
     }
 
-    private var state: State = .value(0)
-
-    private var lastBinaryOperatorKeypad: BinaryOperatorKeypad?
+    @Published var state: State = .value(0)
 
     @Published var result: String = "0"
+
+    private var lastBinaryOperatorKeypad: BinaryOperatorKeypad?
 
     private var lastResult: String = ""
 

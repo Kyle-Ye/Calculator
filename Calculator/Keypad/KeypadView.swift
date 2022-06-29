@@ -10,6 +10,16 @@ import SwiftUI
 struct KeypadView: View {
     @ObservedObject var calculator: CalculatorState
 
+    var binaryOperatorSelected: Bool {
+        if case let .operator(binaryOperatorKeypad) = calculator.state,
+           type(of: binaryOperatorKeypad) == type(of: keypad)
+        {
+            return true
+        } else {
+            return false
+        }
+    }
+
     var keypad: any Keypad
 
     var body: some View {
@@ -26,13 +36,11 @@ struct KeypadView: View {
             }
             .padding()
         }
-//        .aspectRatio(keypad.ratio, contentMode: .fill)
-        .foregroundColor(.white)
-        .gridCellColumns(Int(keypad.dimension.column))
-        .background(keypad.background)
+        .aspectRatio(keypad.ratio, contentMode: .fill)
+        .foregroundColor(binaryOperatorSelected ? keypad.backgroundColor : keypad.forgroundColor)
+        .background(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
         .clipShape(Capsule())
-        .buttonStyle(.bordered)
-        
+        .gridCellColumns(Int(keypad.dimension.column))
     }
 }
 

@@ -15,7 +15,9 @@ protocol Keypad {
     /// The localized name for the keypad
     var title: String { get }
 
-    var background: Color { get }
+    var forgroundColor: Color { get }
+
+    var backgroundColor: Color { get }
 
     var dimension: (row: UInt8, column: UInt8) { get }
 }
