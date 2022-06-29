@@ -31,18 +31,17 @@ struct KeypadView: View {
                     Image(systemName: icon)
                 } else {
                     Text(keypad.title)
-                    Spacer()
                 }
             }
-            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .onHover { exit in
-            print(exit.description)
-        }
-        .aspectRatio(keypad.ratio, contentMode: .fill)
+        .font(.title)
+        .fontWeight(.medium)
         .foregroundColor(binaryOperatorSelected ? keypad.backgroundColor : keypad.forgroundColor)
-        .background(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
-        .clipShape(Capsule())
+        .tint(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
+        .buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
+        .controlSize(.regular)
         .gridCellColumns(Int(keypad.dimension.column))
     }
 }

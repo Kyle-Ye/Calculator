@@ -21,6 +21,7 @@
 		2705217B286B4E330050E88B /* DotInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217A286B4E330050E88B /* DotInputKeypad.swift */; };
 		2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217C286B4E480050E88B /* NumberInputKeypad.swift */; };
 		27052185286C4F7F0050E88B /* SpecialOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */; };
+		2711772D286CA2CE003E6FBE /* KeypadButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2705217A286B4E330050E88B /* DotInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotInputKeypad.swift; sourceTree = "<group>"; };
 		2705217C286B4E480050E88B /* NumberInputKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputKeypad.swift; sourceTree = "<group>"; };
 		27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOperatorKeypad.swift; sourceTree = "<group>"; };
+		2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadButtonStyle.swift; sourceTree = "<group>"; };
 		271BD5A8286C65550013B3CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				27052175286B4DF70050E88B /* Operator */,
 				27052174286B4DEB0050E88B /* Input */,
 				27052167286B45860050E88B /* KeypadView.swift */,
+				2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */,
 			);
 			path = Keypad;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				27052179286B4E180050E88B /* BinaryOperatorKeypad.swift in Sources */,
 				27052171286B4AAD0050E88B /* Keypad.swift in Sources */,
 				2705217B286B4E330050E88B /* DotInputKeypad.swift in Sources */,
+				2711772D286CA2CE003E6FBE /* KeypadButtonStyle.swift in Sources */,
 				27052177286B4E070050E88B /* UnaryOperatorKeypad.swift in Sources */,
 				2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */,
 				27052156286B43FB0050E88B /* CalculatorApp.swift in Sources */,
