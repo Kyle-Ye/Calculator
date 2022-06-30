@@ -9,6 +9,8 @@ import SwiftUI
 
 struct KeypadView: View {
     @ObservedObject var calculator: CalculatorState
+    
+    @Environment(\.keypadSizeCategory) var keypadSizeCategory
 
     var binaryOperatorSelected: Bool {
         if case let .operator(binaryOperatorKeypad) = calculator.state,
@@ -36,14 +38,20 @@ struct KeypadView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .font(.title)
-        .fontWeight(.medium)
         .foregroundColor(binaryOperatorSelected ? keypad.backgroundColor : keypad.forgroundColor)
         .tint(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
-        .controlSize(.regular)
+        .font(.title)
+        .fontWeight(.medium)
+        .controlSize(keypadSizeCategory == .regular ? .large : .large)
         .gridCellColumns(Int(keypad.dimension.column))
+    }
+
+    private func fontSize(from size: CGSize) -> Double {
+        let length = min(size.width, size.height)
+        let factor = 1.0
+        return length / factor
     }
 }
 

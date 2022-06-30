@@ -22,6 +22,7 @@
 		2705217D286B4E490050E88B /* NumberInputKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705217C286B4E480050E88B /* NumberInputKeypad.swift */; };
 		27052185286C4F7F0050E88B /* SpecialOperatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */; };
 		2711772D286CA2CE003E6FBE /* KeypadButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */; };
+		272EAB38286D7E5F004C9738 /* KeypadSizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EAB37286D7E5F004C9738 /* KeypadSizeCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		27052184286C4F7F0050E88B /* SpecialOperatorKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOperatorKeypad.swift; sourceTree = "<group>"; };
 		2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadButtonStyle.swift; sourceTree = "<group>"; };
 		271BD5A8286C65550013B3CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		272EAB37286D7E5F004C9738 /* KeypadSizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadSizeCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				27052174286B4DEB0050E88B /* Input */,
 				27052167286B45860050E88B /* KeypadView.swift */,
 				2711772C286CA2CE003E6FBE /* KeypadButtonStyle.swift */,
+				272EAB37286D7E5F004C9738 /* KeypadSizeCategory.swift */,
 			);
 			path = Keypad;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				27052168286B45860050E88B /* KeypadView.swift in Sources */,
 				2705216F286B4A900050E88B /* OperatorKeypad.swift in Sources */,
+				272EAB38286D7E5F004C9738 /* KeypadSizeCategory.swift in Sources */,
 				27052173286B4CEB0050E88B /* InputKeypad.swift in Sources */,
 				27052158286B43FB0050E88B /* ContentView.swift in Sources */,
 				27052185286C4F7F0050E88B /* SpecialOperatorKeypad.swift in Sources */,
