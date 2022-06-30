@@ -12,7 +12,7 @@ protocol BinaryOperatorKeypad: OperatorKeypad {
 }
 
 extension BinaryOperatorKeypad {
-    var forgroundColor: Color { .white }
+    var forgroundColor: Color { .primary }
 
     var backgroundColor: Color { .accentColor }
 }

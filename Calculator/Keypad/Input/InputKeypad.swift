@@ -12,7 +12,7 @@ protocol InputKeypad: Keypad {}
 extension InputKeypad {
     var icon: String? { nil }
     
-    var forgroundColor: Color { .white }
+    var forgroundColor: Color { .primary }
     
     var backgroundColor: Color { Color(.darkGray) }
 }

@@ -16,7 +16,7 @@ struct EqualOperatorKeypad: SpecialOperatorKeypad {
 
     var title: String { "Equal" }
 
-    var forgroundColor: Color { .white }
+    var forgroundColor: Color { .primary }
 
     var backgroundColor: Color { .accentColor }
 }

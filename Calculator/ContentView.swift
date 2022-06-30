@@ -20,14 +20,16 @@ struct ContentView: View {
             [.zero, .dot, .equal],
         ]
     }
+    
+    private var spacing: Double { 12 }
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: 12) {
+        VStack(alignment: .trailing, spacing: spacing) {
             Text(calculator.result)
-                .foregroundColor(.white)
+                .foregroundColor(.primary)
                 .font(.system(size: 64))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-            Grid {
+            Grid(horizontalSpacing: spacing, verticalSpacing: spacing) {
                 ForEach(keypadsLayout, id: \.description) { keypads in
                     GridRow {
                         ForEach(keypads, id: \.title) { keypad in
@@ -37,27 +39,9 @@ struct ContentView: View {
                 }
             }
         }
-        .preferredColorScheme(.dark)
-
-//            VStack(spacing: 12) {
-//                HStack {
-//                    Spacer()
-//                    Text(env.display).foregroundColor(.white)
-//                        .font(.system(size: 64))
-//                }
-//                ForEach(buttons, id: \.self) { row in
-//                    HStack(spacing: UIScreen.main.bounds.width / 34.5) {
-//                        ForEach(row, id: \.self) { button in
-//                            Keypad(model: button)
-//                        }
-//                    }
-//                }
-//            }.padding(.bottom)
+        .padding(spacing)
+//        .preferredColorScheme(.dark)
     }
-
-//    var buttonWidth: CGFloat {
-//        (UIScreen.main.bounds.width - 5 * 12) / 4
-//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
