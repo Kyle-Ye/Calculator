@@ -41,8 +41,12 @@ struct NegateOperatorKeypad: UnaryOperatorKeypad {
     var title: String { "Negate" }
 
     func operate(_ value: String) -> String {
-        guard let value = Double(value) else { return "ERROR" }
-        return (-value).formatted()
+        guard let _ = Double(value) else { return "ERROR" }
+        if value.hasPrefix("-") {
+            return String(value.dropFirst())
+        } else {
+            return "-" + value
+        }
     }
 }
 
