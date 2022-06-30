@@ -4,8 +4,11 @@ A hobby project using Swift protocol and Swift 5.7's new generics to build an iO
 
 Highlights:
 - ~~You can use Calculator in Simulator now 🎉~~
+<img src="Resources/Simulator-1.png" alt="simulator-1" style="zoom:25%;" />  <img src="Resources/Simulator-2.png" alt="simulator-1" style="zoom:25%;" />
 - iPad's missing calculator
+<img src="Resources/ipad.png" alt="ipad" style="zoom:25%;" />
 - Make full use of Swift's protocols and new generics
+<img src="Resources/generics.png" alt="ipad" style="zoom: 33%;" />
 
 ## Future plan
 - [ ] [P1] hover effect
@@ -20,6 +23,6 @@ Highlights:
 
 ## Copyrights
 
-![calculator](Calculator/Assets.xcassets/AppIcon.appiconset/calculator.png)
+![calculator](Calculator/Assets.xcassets/AppIcon.appiconset/256.png)
 
 > The icon of the Calculator app is trademarks of Apple Inc., registered in the U.S. and other countries.
