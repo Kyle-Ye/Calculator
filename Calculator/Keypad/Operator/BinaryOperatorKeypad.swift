@@ -12,9 +12,9 @@ protocol BinaryOperatorKeypad: OperatorKeypad {
 }
 
 extension BinaryOperatorKeypad {
-    var forgroundColor: Color { .primary }
+    var forgroundStyle: some ShapeStyle { .primary }
 
-    var backgroundColor: Color { .accentColor }
+    var backgroundStyle: some ShapeStyle { Color.accentColor }
 }
 
 // MARK: - DivideOperatorKeypad

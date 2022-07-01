@@ -12,8 +12,8 @@ protocol InputKeypad: Keypad {}
 extension InputKeypad {
     var icon: String? { nil }
     
-    var forgroundColor: Color { .primary }
+    var forgroundStyle: some ShapeStyle { .primary }
     
-    var backgroundColor: Color { Color(.darkGray) }
+    var backgroundStyle: some ShapeStyle { Color(.darkGray) }
 }
 
