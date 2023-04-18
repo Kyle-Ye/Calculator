@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KeypadView<KeypadType: Keypad>: View {
+struct KeypadView: View {
     @ObservedObject var calculator: CalculatorState
     
     @Environment(\.keypadSizeCategory) var keypadSizeCategory
@@ -22,7 +22,7 @@ struct KeypadView<KeypadType: Keypad>: View {
         }
     }
 
-    var keypad: KeypadType
+    var keypad: any Keypad
 
     // FIXME: Make button to be circle in most cases
     var body: some View {
@@ -40,8 +40,8 @@ struct KeypadView<KeypadType: Keypad>: View {
         }
         .font(.title)
         .fontWeight(.medium)
-        .foregroundStyle(binaryOperatorSelected ? keypad.backgroundStyle : keypad.forgroundStyle)
-        .tint(binaryOperatorSelected ? keypad.forgroundStyle : keypad.backgroundStyle)
+        .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
+        .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
         .font(.title)
