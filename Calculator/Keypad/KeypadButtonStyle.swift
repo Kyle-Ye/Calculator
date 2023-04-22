@@ -16,7 +16,6 @@ struct KeypadButtonStyle: ButtonStyle {
             .fontWeight(.medium)
             .padding()
             .background(.white.opacity((configuration.isPressed || isHovered) ? 0.4 : 0), in: Capsule())
-            .background(.tint, in: Capsule())
             .animation(.spring(), value: configuration.isPressed)
             .onHover { isHovered = $0 }
     }

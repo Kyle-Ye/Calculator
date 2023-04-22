@@ -38,6 +38,7 @@ struct KeypadView: View {
         }
         .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
         .buttonStyle(.keypad)
+        .background(.tint, in: Capsule())
         .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
         .gridCellColumns(Int(keypad.dimension.column))
     }
