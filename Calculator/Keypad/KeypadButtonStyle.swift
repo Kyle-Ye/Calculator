@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct KeypadButtonStyle: ButtonStyle {
-
-    // TODO
+    @State private var isHovered = false
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .animation(.easeInOut(duration: 1), value: configuration.isPressed)
-            .opacity(configuration.isPressed ? 0.3 : 1.0)
+            .font(.title)
+            .fontWeight(.medium)
             .padding()
-            .clipShape(Capsule())
+            .background(.white.opacity((configuration.isPressed || isHovered) ? 0.4 : 0), in: Capsule())
+            .background(.tint, in: Capsule())
+            .animation(.spring(), value: configuration.isPressed)
+            .onHover { isHovered = $0 }
     }
 }
 
@@ -25,7 +28,12 @@ extension ButtonStyle where Self == KeypadButtonStyle {
 
 struct KeypadButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        Button("1") {}
-            .buttonStyle(.keypad)
+        HStack {
+            KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
+                .frame(width: 100, height: 100)
+            KeypadView(calculator: CalculatorState(), keypad: PlusOperatorKeypad())
+                .frame(width: 100, height: 100)
+        }
+        .preferredColorScheme(.dark)
     }
 }

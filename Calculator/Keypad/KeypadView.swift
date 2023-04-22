@@ -14,8 +14,7 @@ struct KeypadView: View {
 
     var binaryOperatorSelected: Bool {
         if case let .operator(binaryOperatorKeypad) = calculator.state,
-           type(of: binaryOperatorKeypad) == type(of: keypad)
-        {
+           type(of: binaryOperatorKeypad) == type(of: keypad) {
             return true
         } else {
             return false
@@ -24,7 +23,6 @@ struct KeypadView: View {
 
     var keypad: any Keypad
 
-    // FIXME: Make button to be circle in most cases
     var body: some View {
         Button {
             calculator.updateState(for: keypad)
@@ -39,12 +37,8 @@ struct KeypadView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
+        .buttonStyle(.keypad)
         .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
-        .buttonStyle(.borderedProminent)
-        .buttonBorderShape(.capsule)
-        .font(.title)
-        .fontWeight(.medium)
-        .controlSize(keypadSizeCategory == .regular ? .large : .large)
         .gridCellColumns(Int(keypad.dimension.column))
     }
 
@@ -57,9 +51,8 @@ struct KeypadView: View {
 
 struct KeypadView_Previews: PreviewProvider {
     static var previews: some View {
-        KeypadView(calculator: CalculatorState(), keypad: .negate)
-
         Grid {
+            KeypadView(calculator: CalculatorState(), keypad: .negate)
             GridRow {
                 KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
                 KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.two)
@@ -70,5 +63,6 @@ struct KeypadView_Previews: PreviewProvider {
                 KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.four)
             }
         }
+        .preferredColorScheme(.dark)
     }
 }
