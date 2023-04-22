@@ -29,16 +29,16 @@ struct KeypadView: View {
         } label: {
             Group {
                 if let icon = keypad.icon {
-                    Image(systemName: icon)
+                    Image(systemName: icon).renderingMode(.template)
                 } else {
                     Text(keypad.title)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
         }
-        .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
-        .buttonStyle(.keypad)
         .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
+        .buttonStyle(.keypad)
         .gridCellColumns(Int(keypad.dimension.column))
     }
 
@@ -49,20 +49,27 @@ struct KeypadView: View {
     }
 }
 
-struct KeypadView_Previews: PreviewProvider {
-    static var previews: some View {
+struct KeypadView_Previews: View, PreviewProvider {
+    @StateObject var state = CalculatorState()
+    
+    var body: some View {
         Grid {
             KeypadView(calculator: CalculatorState(), keypad: .negate)
             GridRow {
-                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
-                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.two)
-                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.three)
+                KeypadView(calculator: state, keypad: NumberInputKeypad.one)
+                KeypadView(calculator: state, keypad: NumberInputKeypad.two)
+                KeypadView(calculator: state, keypad: NumberInputKeypad.three)
             }
             GridRow {
-                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.zero)
-                KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.four)
+                KeypadView(calculator: state, keypad: NumberInputKeypad.four)
+                KeypadView(calculator: state, keypad: NumberInputKeypad.five)
+                KeypadView(calculator: state, keypad: PlusOperatorKeypad())
             }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    static var previews: some View {
+        KeypadView_Previews()
     }
 }
