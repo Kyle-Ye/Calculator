@@ -9,21 +9,27 @@ import SwiftUI
 
 struct KeypadButtonStyle: ButtonStyle {
     @State private var isHovered = false
+    var shape: AnyShape
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.title)
             .fontWeight(.medium)
             .padding()
-            .background(.white.opacity((configuration.isPressed || isHovered) ? 0.4 : 0), in: Capsule())
-            .background(.tint, in: Capsule())
+            .background(.white.opacity((configuration.isPressed || isHovered) ? 0.4 : 0), in: shape)
+            .background(.tint, in: shape)
             .animation(.spring(), value: configuration.isPressed)
             .onHover { isHovered = $0 }
     }
 }
 
 extension ButtonStyle where Self == KeypadButtonStyle {
-    static var keypad: KeypadButtonStyle { KeypadButtonStyle() }
+    static func keypad(shape: some Shape) -> KeypadButtonStyle {
+        print(shape)
+        return KeypadButtonStyle(shape: AnyShape(shape))
+        
+    }
+
 }
 
 struct KeypadButtonStyle_Previews: PreviewProvider, View {

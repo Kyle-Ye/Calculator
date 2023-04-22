@@ -38,8 +38,8 @@ struct KeypadView: View {
             .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
         }
         .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
-        .buttonStyle(.keypad)
-        .gridCellColumns(Int(keypad.dimension.column))
+        .buttonStyle((keypad.isCircle && keypadSizeCategory == .compact) ? .keypad(shape: Circle()) : .keypad(shape: Capsule()))
+        .gridCellColumns(keypad.dimension.column)
     }
 
     private func fontSize(from size: CGSize) -> Double {

@@ -22,11 +22,11 @@ protocol Keypad {
 
     var backgroundStyle: BackgroundStyle { get }
 
-    var dimension: (row: UInt8, column: UInt8) { get }
+    var dimension: (row: Int, column: Int) { get }
 }
 
 extension Keypad {
-    var dimension: (row: UInt8, column: UInt8) { (1, 1) }
-
-    var ratio: Double { Double(dimension.row) / Double(dimension.column) }
+    var dimension: (row: Int, column: Int) { (1, 1) }
+    
+    var isCircle: Bool { dimension.row == dimension.column }
 }

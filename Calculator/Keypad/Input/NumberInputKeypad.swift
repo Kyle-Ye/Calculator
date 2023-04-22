@@ -12,7 +12,7 @@ struct NumberInputKeypad: InputKeypad {
 
     var title: String { number.description }
 
-    var dimension: (row: UInt8, column: UInt8) { number == 0 ? (1, 2) : (1, 1) }
+    var dimension: (row: Int, column: Int) { number == 0 ? (1, 2) : (1, 1) }
 }
 
 extension Keypad where Self == NumberInputKeypad {
