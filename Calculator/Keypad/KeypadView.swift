@@ -38,8 +38,8 @@ struct KeypadView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .foregroundColor(binaryOperatorSelected ? keypad.backgroundColor : keypad.forgroundColor)
-        .tint(binaryOperatorSelected ? keypad.forgroundColor : keypad.backgroundColor)
+        .foregroundStyle(binaryOperatorSelected ? AnyShapeStyle(keypad.backgroundStyle) : AnyShapeStyle(keypad.forgroundStyle))
+        .tint(binaryOperatorSelected ? AnyShapeStyle(keypad.forgroundStyle) : AnyShapeStyle(keypad.backgroundStyle))
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
         .font(.title)

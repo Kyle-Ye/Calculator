@@ -12,7 +12,7 @@ import SwiftUI
 class CalculatorState: ObservableObject {
     enum State: CustomStringConvertible {
         case value(Int)
-        case `operator`(BinaryOperatorKeypad)
+        case `operator`(any BinaryOperatorKeypad)
 
         var description: String {
             switch self {
@@ -26,7 +26,7 @@ class CalculatorState: ObservableObject {
 
     @Published var result: String = "0"
 
-    private var lastBinaryOperatorKeypad: BinaryOperatorKeypad?
+    private var lastBinaryOperatorKeypad: (any BinaryOperatorKeypad)?
 
     private var lastResult: String = ""
 
@@ -39,11 +39,11 @@ class CalculatorState: ObservableObject {
             numberInput(keypad)
         } else if keypad is DotInputKeypad {
             dotInput()
-        } else if let keypad = keypad as? UnaryOperatorKeypad {
+        } else if let keypad = keypad as? (any UnaryOperatorKeypad) {
             unaryOperator(keypad)
-        } else if let keypad = keypad as? BinaryOperatorKeypad {
+        } else if let keypad = keypad as? (any BinaryOperatorKeypad) {
             binaryOperator(keypad)
-        } else if keypad is SpecialOperatorKeypad {
+        } else if keypad is (any SpecialOperatorKeypad) {
             if keypad is EqualOperatorKeypad {
                 equalOperator()
             } else if keypad is AllClearOperatorKeypad {
@@ -80,11 +80,11 @@ class CalculatorState: ObservableObject {
         }
     }
 
-    private func unaryOperator(_ keypad: UnaryOperatorKeypad) {
+    private func unaryOperator(_ keypad: any UnaryOperatorKeypad) {
         result = keypad.operate(result)
     }
 
-    private func binaryOperator(_ keypad: BinaryOperatorKeypad) {
+    private func binaryOperator(_ keypad: any BinaryOperatorKeypad) {
         if case .value = state,
            let lastBinaryOperatorKeypad,
            !lastResult.isEmpty

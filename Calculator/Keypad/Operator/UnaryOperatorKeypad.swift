@@ -14,9 +14,9 @@ protocol UnaryOperatorKeypad: OperatorKeypad {
 }
 
 extension UnaryOperatorKeypad {
-    var forgroundColor: Color { .black }
+    var forgroundStyle: some ShapeStyle { .black }
     
-    var backgroundColor: Color { Color(uiColor: .lightGray) }
+    var backgroundStyle: some ShapeStyle { Color(uiColor: .lightGray) }
 }
 
 // MARK: - ClearOperatorKeypad
