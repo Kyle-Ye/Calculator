@@ -53,18 +53,13 @@ struct KeypadView_Previews: View, PreviewProvider {
     @StateObject var state = CalculatorState()
     
     var body: some View {
-        Grid {
-            KeypadView(calculator: CalculatorState(), keypad: .negate)
-            GridRow {
-                KeypadView(calculator: state, keypad: NumberInputKeypad.one)
-                KeypadView(calculator: state, keypad: NumberInputKeypad.two)
-                KeypadView(calculator: state, keypad: NumberInputKeypad.three)
-            }
-            GridRow {
-                KeypadView(calculator: state, keypad: NumberInputKeypad.four)
-                KeypadView(calculator: state, keypad: NumberInputKeypad.five)
-                KeypadView(calculator: state, keypad: PlusOperatorKeypad())
-            }
+        HStack {
+            KeypadView(calculator: state, keypad: NumberInputKeypad.zero)
+                .frame(width: 160, height: 80)
+            KeypadView(calculator: state, keypad: DotInputKeypad())
+                .frame(width: 80, height: 80)
+            KeypadView(calculator: state, keypad: EqualOperatorKeypad())
+                .frame(width: 80, height: 80)
         }
         .preferredColorScheme(.dark)
     }

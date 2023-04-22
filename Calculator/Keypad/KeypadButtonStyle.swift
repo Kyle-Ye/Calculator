@@ -26,14 +26,20 @@ extension ButtonStyle where Self == KeypadButtonStyle {
     static var keypad: KeypadButtonStyle { KeypadButtonStyle() }
 }
 
-struct KeypadButtonStyle_Previews: PreviewProvider {
-    static var previews: some View {
+struct KeypadButtonStyle_Previews: PreviewProvider, View {
+    @StateObject var state = CalculatorState()
+    
+    var body: some View {
         HStack {
-            KeypadView(calculator: CalculatorState(), keypad: NumberInputKeypad.one)
+            KeypadView(calculator: state, keypad: NumberInputKeypad.one)
                 .frame(width: 100, height: 100)
-            KeypadView(calculator: CalculatorState(), keypad: PlusOperatorKeypad())
+            KeypadView(calculator: state, keypad: PlusOperatorKeypad())
                 .frame(width: 100, height: 100)
         }
         .preferredColorScheme(.dark)
+    }
+    
+    static var previews: some View {
+        KeypadButtonStyle_Previews()
     }
 }
